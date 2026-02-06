@@ -12,68 +12,25 @@ const supabase = require('./src/Supabase/client');
 //URL
 const URL = "http://localhost:5000";
 
+//importes routes
+const userRoutes = require('./src/routes/userRoutes');
+  // const productsRoutes = require('./src/routes/productsRoutes');
+const alergenoRoute = require('./src/routes/AlergenoRoute');
+  // const codeRoute = require('./src/routes/CodeRoute');
+  // const pedidosRoutes = require('./src/routes/PedidosRoutes');
+  // const lineaPedidoRoute = require('./src/routes/lineaPedidoRoute');
+  // const transaccionRoutes = require('./src/routes/TransaccionRoutes');
+  // const productsAlergenoRoute = require('./src/routes/productsAlergenoRoutes');
+
 //Routes
-
-//Users
-app.get('/usuarios', async (req, res) => {
-  const { data, error } = await supabase.from('usuario').select('*');
-  if (error) return res.json({ error: error.message });
-  res.json({ mensaje: 'Usuarios obtenidos', datos: data });
-})
-
-//By ID
-app.get('/usuarios/id', async (req, res) => {
-  const {data, error } = await supabase.from('usuario').select('id_usuario');
-  if ( error) return res.json({error: error.message});
-  res.json({mensaje: 'id obtenido',datos: data});
-})
-
-//Products Alergeno
-app.get('/producto_alergeno', async (req, res) => {
-  const { data, error } = await supabase.from('producto_alergeno').select('*');
-  if (error) return res.json({ error: error.message });
-  res.json({ mensaje: 'Usuarios obtenidos', datos: data });
-})
-
-//linea_pedido
-
-app.get('/linea_pedido', async (req, res) => {
-  const { data, error } = await supabase.from('linea_pedido').select('*');
-  if (error) return res.json({ error: error.message });
-  res.json({ mensaje: 'Usuarios obtenidos', datos: data });
-})
-//Transaccion
-app.get('/transaccion', async (req, res) => {
-  const { data, error } = await supabase.from('transaccion').select('*');
-  if (error) return res.json({ error: error.message });
-  res.json({ mensaje: 'transaccion', datos: data });
-})
-//pedido
-app.get('/pedido', async (req, res) => {
-  const { data, error } = await supabase.from('pedido').select('*');
-  if (error) return res.json({ error: error.message });
-  res.json({ mensaje: 'Cargado Pedido', datos: data });
-})
-
-//producto
-app.get('/producto', async (req, res) => {
-  const { data, error } = await supabase.from('producto').select('*');
-  if (error) return res.json({ error: error.message });
-  res.json({ mensaje: 'Cargado Producto', datos: data });
-})
-//alergeno
-app.get('/alergeno', async (req, res) => {
-  const { data, error } = await supabase.from('alergeno').select('*');
-  if (error) return res.json({ error: error.message });
-  res.json({ mensaje: 'Cargado alergeno.', datos: data });
-})
-//codigo_rol
-app.get('/codigo_rol', async (req, res) => {
-  const { data, error } = await supabase.from('codigo_rol').select('*');
-  if (error) return res.json({ error: error.message });
-  res.json({ mensaje: 'Codigo obtenidos', datos: data });
-})
-
+app.use('/usuarios',userRoutes)
+// app.use('/productsRoutes',productsRoutes)
+ app.use('/alergenoRoute',alergenoRoute)
+// app.use('/codeRoute',codeRoute)
+// app.use('/pedidosRoutes',pedidosRoutes)
+// app.use('/lineaPedidoRoute',lineaPedidoRoute)
+// app.use('/transaccionRoutes',transaccionRoutes)
+// app.use('/productsAlergenoRoute',productsAlergenoRoute)
 
 
 // carga del env
