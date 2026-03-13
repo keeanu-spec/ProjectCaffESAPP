@@ -1,0 +1,544 @@
+/* Register Styles - Coffee Theme */
+
+/* ===== Wrapper ===== */
+.register-wrapper {
+    background: linear-gradient(135deg, #6F4E37 0%, #5C4033 50%, #3E2723 100%);
+    min-height: 100vh;
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== Card ===== */
+.register-card {
+    background-color: #F5E6D3;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: cardSlideIn 0.5s ease-out;
+}
+
+@keyframes cardSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Header ===== */
+.register-header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #3E2723;
+    margin-bottom: 0.25rem;
+}
+
+.register-header p {
+    color: #8B6F47;
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* ===== Progress Bar ===== */
+.register-progress {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 1.75rem 0 2rem;
+    gap: 0;
+}
+
+.progress-step-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    flex: 1;
+    max-width: 120px;
+}
+
+.progress-step {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    background-color: #E8D7C3;
+    color: #A0826D;
+    border: 3px solid #D4A574;
+    transition: all 0.3s ease;
+    cursor: default;
+    position: relative;
+    z-index: 2;
+}
+
+.progress-step.active {
+    background: linear-gradient(135deg, #8B6F47 0%, #6F4E37 100%);
+    color: #F5E6D3;
+    border-color: #8B6F47;
+    box-shadow: 0 4px 15px rgba(139, 111, 71, 0.4);
+    transform: scale(1.1);
+}
+
+.progress-step.completed {
+    background-color: #6F4E37;
+    color: #F5E6D3;
+    border-color: #6F4E37;
+    cursor: pointer;
+}
+
+.progress-step.completed:hover {
+    transform: scale(1.05);
+}
+
+.progress-label {
+    font-size: 0.7rem;
+    color: #8B6F47;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.progress-line {
+    position: absolute;
+    top: 20px;
+    left: calc(50% + 24px);
+    width: calc(100% - 48px);
+    height: 3px;
+    background-color: #D4A574;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+.progress-line.completed {
+    background-color: #6F4E37;
+}
+
+/* ===== Form Steps ===== */
+.form-step {
+    animation: stepFadeIn 0.35s ease-out;
+}
+
+@keyframes stepFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.step-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #3E2723;
+    margin-bottom: 0.25rem;
+}
+
+.step-subtitle {
+    color: #A0826D;
+    font-size: 0.85rem;
+    margin-bottom: 1.25rem;
+}
+
+/* ===== Form Controls ===== */
+.register-card .form-label {
+    color: #3E2723;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.78rem;
+    margin-bottom: 0.35rem;
+}
+
+.register-card .form-control,
+.register-card .form-select {
+    background-color: #FDFBF7;
+    border: 2px solid #D4A574;
+    color: #3E2723;
+    font-size: 0.95rem;
+    border-radius: 10px;
+    padding: 0.65rem 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.register-card .form-control:focus,
+.register-card .form-select:focus {
+    border-color: #8B6F47;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 0.2rem rgba(139, 111, 71, 0.2);
+    color: #3E2723;
+}
+
+.register-card .form-control::placeholder {
+    color: #B8A08C;
+}
+
+.register-card .form-control.is-invalid,
+.register-card .form-select.is-invalid {
+    border-color: #C0392B;
+}
+
+.register-card .invalid-feedback {
+    font-size: 0.78rem;
+    color: #C0392B;
+}
+
+/* ===== Shift Selector ===== */
+.shift-selector {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+}
+
+.shift-card {
+    background-color: #FDFBF7;
+    border: 2px solid #D4A574;
+    border-radius: 14px;
+    padding: 1rem 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.shift-card:hover {
+    border-color: #8B6F47;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 111, 71, 0.15);
+}
+
+.shift-card.selected {
+    background: linear-gradient(135deg, #8B6F47 0%, #6F4E37 100%);
+    border-color: #6F4E37;
+    color: #F5E6D3;
+    box-shadow: 0 4px 15px rgba(139, 111, 71, 0.3);
+    transform: translateY(-2px);
+}
+
+.shift-icon {
+    font-size: 1.75rem;
+}
+
+.shift-label {
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.shift-card.selected .shift-label {
+    color: #F5E6D3;
+}
+
+.shift-time {
+    font-size: 0.7rem;
+    color: #A0826D;
+}
+
+.shift-card.selected .shift-time {
+    color: #D4A574;
+}
+
+/* ===== Allergens Grid ===== */
+.allergens-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.allergen-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 0.8rem;
+    border: 2px solid #D4A574;
+    border-radius: 25px;
+    background-color: #FDFBF7;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-size: 0.82rem;
+    user-select: none;
+}
+
+.allergen-chip:hover {
+    border-color: #8B6F47;
+    background-color: #F0E0CC;
+}
+
+.allergen-chip.selected {
+    background: linear-gradient(135deg, #8B6F47 0%, #6F4E37 100%);
+    border-color: #6F4E37;
+    color: #F5E6D3;
+    box-shadow: 0 2px 8px rgba(139, 111, 71, 0.25);
+}
+
+.allergen-icon {
+    font-size: 1rem;
+}
+
+.allergen-name {
+    font-weight: 600;
+    font-size: 0.78rem;
+}
+
+.selected-count {
+    font-size: 0.8rem;
+    color: #8B6F47;
+    font-weight: 600;
+}
+
+/* ===== Icon Picker ===== */
+.selected-icon-preview {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.preview-icon {
+    font-size: 3.5rem;
+    display: inline-block;
+    animation: iconPop 0.3s ease-out;
+    background: linear-gradient(135deg, #FDFBF7 0%, #F0E0CC 100%);
+    border: 3px solid #8B6F47;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(139, 111, 71, 0.25);
+}
+
+@keyframes iconPop {
+    0% {
+        transform: scale(0.5);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.icons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(52px, 1fr));
+    gap: 0.5rem;
+}
+
+.icon-option {
+    width: 52px;
+    height: 52px;
+    border: 2px solid #D4A574;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background-color: #FDFBF7;
+    transition: all 0.25s ease;
+}
+
+.icon-option:hover {
+    border-color: #8B6F47;
+    transform: scale(1.1);
+    background-color: #F0E0CC;
+}
+
+.icon-option.selected {
+    border-color: #6F4E37;
+    background: linear-gradient(135deg, #8B6F47 0%, #6F4E37 100%);
+    transform: scale(1.1);
+    box-shadow: 0 3px 12px rgba(139, 111, 71, 0.35);
+}
+
+/* ===== Navigation Buttons ===== */
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 2px solid #E8D7C3;
+}
+
+.nav-spacer {
+    flex: 1;
+}
+
+.btn-nav {
+    padding: 0.6rem 1.5rem;
+    font-weight: 600;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.register-card .btn-primary.btn-nav {
+    background: linear-gradient(135deg, #8B6F47 0%, #6F4E37 100%);
+    border: none;
+    color: #F5E6D3;
+    box-shadow: 0 4px 15px rgba(95, 64, 45, 0.3);
+}
+
+.register-card .btn-primary.btn-nav:hover:not(:disabled) {
+    background: linear-gradient(135deg, #9B7F57 0%, #7F5E47 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(95, 64, 45, 0.4);
+}
+
+.register-card .btn-outline-secondary.btn-nav {
+    border: 2px solid #D4A574;
+    color: #6F4E37;
+    background-color: transparent;
+}
+
+.register-card .btn-outline-secondary.btn-nav:hover {
+    background-color: #E8D7C3;
+    border-color: #8B6F47;
+}
+
+.btn-submit {
+    min-width: 180px;
+}
+
+/* ===== Footer ===== */
+.register-footer {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #E8D7C3;
+}
+
+.register-footer p {
+    color: #A0826D;
+    font-size: 0.88rem;
+    margin: 0;
+}
+
+.login-link {
+    color: #6F4E37;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.login-link:hover {
+    color: #8B6F47;
+    text-decoration: underline;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .register-wrapper {
+        padding: 1rem 0;
+    }
+
+    .register-card {
+        padding: 1.75rem 1.25rem;
+        border-radius: 16px;
+    }
+
+    .register-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .shift-selector {
+        gap: 0.5rem;
+    }
+
+    .shift-card {
+        padding: 0.75rem 0.35rem;
+    }
+
+    .shift-icon {
+        font-size: 1.4rem;
+    }
+
+    .shift-label {
+        font-size: 0.75rem;
+    }
+
+    .shift-time {
+        font-size: 0.65rem;
+    }
+
+    .icons-grid {
+        grid-template-columns: repeat(auto-fill, minmax(46px, 1fr));
+    }
+
+    .icon-option {
+        width: 46px;
+        height: 46px;
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .register-header h1 {
+        font-size: 1.3rem;
+    }
+
+    .progress-step {
+        width: 34px;
+        height: 34px;
+        font-size: 0.8rem;
+    }
+
+    .progress-label {
+        font-size: 0.6rem;
+    }
+
+    .progress-line {
+        top: 17px;
+    }
+
+    .allergen-chip {
+        padding: 0.35rem 0.6rem;
+        font-size: 0.75rem;
+    }
+
+    .btn-nav {
+        padding: 0.5rem 1rem;
+        font-size: 0.82rem;
+    }
+
+    .preview-icon {
+        font-size: 2.5rem;
+        width: 64px;
+        height: 64px;
+    }
+}
+
+@media (max-width: 320px) {
+    .shift-selector {
+        grid-template-columns: 1fr;
+    }
+
+    .shift-card {
+        flex-direction: row;
+        gap: 0.75rem;
+        padding: 0.6rem 1rem;
+    }
+
+    .icons-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}

@@ -1,0 +1,208 @@
+/* Login Styles with Bootstrap - Coffee Theme */
+
+:root {
+    --primary-color: #8B6F47;
+    --secondary-color: #6F4E37;
+    --light-color: #D4A574;
+    --cream-color: #F5E6D3;
+    --dark-color: #3E2723;
+    --accent-color: #A0826D;
+}
+
+/* Background */
+.login-wrapper {
+    background: linear-gradient(135deg, #6F4E37 0%, #5C4033 50%, #3E2723 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.min-vh-100 {
+    min-height: 100vh;
+}
+
+/* Card Styles */
+.login-card {
+    border: none;
+    background-color: #F5E6D3;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-card .form-control {
+    background-color: #FDFBF7;
+    border: 2px solid #D4A574;
+    color: #3E2723;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.login-card .form-control:focus {
+    border-color: #8B6F47;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 0.2rem rgba(139, 111, 71, 0.25);
+    color: #3E2723;
+}
+
+.login-card .form-control::placeholder {
+    color: #A0826D;
+}
+
+.login-card .form-control:disabled {
+    background-color: #E8D7C3;
+    color: #8B6F47;
+}
+
+/* Labels */
+.login-card .form-label {
+    color: #3E2723;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.85rem;
+}
+
+/* Button */
+.btn-primary {
+    background: linear-gradient(135deg, #8B6F47 0%, #6F4E37 100%);
+    border: none;
+    color: #F5E6D3;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(95, 64, 45, 0.3);
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: linear-gradient(135deg, #9B7F57 0%, #7F5E47 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(95, 64, 45, 0.4);
+    color: #F5E6D3;
+}
+
+.btn-primary:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.btn-primary:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 0.25rem rgba(139, 111, 71, 0.5);
+}
+
+/* Alert */
+.alert-danger {
+    background-color: #FDE8E8;
+    border: 1px solid #F5C8C8;
+    color: #8B3A3A;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+.alert-danger {
+    animation: shake 0.3s ease-in-out;
+}
+
+/* Header */
+.login-header h1 {
+    color: #3E2723;
+}
+
+.login-header p {
+    color: #8B6F47;
+}
+
+/* Footer */
+.login-footer {
+    border-top: 1px solid #D4A574;
+}
+
+.login-footer a {
+    color: #8B6F47;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.login-footer a:hover {
+    color: #6F4E37;
+}
+
+/* Spinner */
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .login-card {
+        padding: 1.5rem !important;
+    }
+
+    .login-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .login-header p {
+        font-size: 0.875rem;
+    }
+
+    .login-card .form-control {
+        font-size: 16px; /* Evita zoom en iOS */
+    }
+
+    .login-card .mb-4,
+    .login-card .mb-md-5 {
+        margin-bottom: 1rem !important;
+    }
+
+    .login-card .mb-3,
+    .login-card .mb-md-4 {
+        margin-bottom: 0.875rem !important;
+    }
+}
+
+/* Ultra small devices */
+@media (max-width: 320px) {
+    .login-card {
+        padding: 1rem !important;
+    }
+
+    .login-header h1 {
+        font-size: 1.25rem;
+    }
+
+    .login-card .form-control {
+        padding: 0.5rem 0.75rem;
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+}
