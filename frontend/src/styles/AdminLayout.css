@@ -1,0 +1,225 @@
+/* AdminLayout.css — Admin Panel Layout — Coffee Theme — Mobile-first */
+
+/* ===== Wrapper ===== */
+.al-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #F7F3EE;
+}
+
+/* ===== Top Bar ===== */
+.al-topbar {
+    background: linear-gradient(135deg, #3E2723 0%, #5C4033 100%);
+    color: #F5E6D3;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    position: sticky; top: 0; z-index: 300;
+    box-shadow: 0 2px 12px rgba(62, 39, 35, 0.25);
+}
+
+.al-hamburger {
+    background: rgba(255, 255, 255, 0.15);
+    border: none; color: #F5E6D3;
+    width: 36px; height: 36px;
+    border-radius: 8px; font-size: 1.1rem;
+    cursor: pointer; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+}
+.al-hamburger:hover { background: rgba(255, 255, 255, 0.25); }
+
+.al-brand-block {
+    display: flex; align-items: center; gap: 0.4rem; flex: 1;
+}
+.al-logo  { font-size: 1.3rem; }
+.al-brand {
+    font-size: 1rem; font-weight: 800;
+    letter-spacing: 0.5px;
+}
+.al-role-tag {
+    font-size: 0.6rem; font-weight: 700;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px; padding: 0.1rem 0.4rem;
+    letter-spacing: 0.8px; text-transform: uppercase;
+}
+
+/* Institution Switcher */
+.al-inst-wrap { position: relative; }
+.al-inst-btn {
+    display: flex; align-items: center; gap: 0.4rem;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px; padding: 0.38rem 0.75rem;
+    color: #F5E6D3; font-size: 0.8rem; font-weight: 600;
+    cursor: pointer; white-space: nowrap;
+    transition: background 0.2s;
+}
+.al-inst-btn:hover { background: rgba(255, 255, 255, 0.22); }
+.al-inst-name { max-width: 100px; overflow: hidden; text-overflow: ellipsis; }
+.al-arrow     { font-size: 0.55rem; opacity: 0.8; }
+
+.al-inst-backdrop {
+    position: fixed; inset: 0; z-index: 390;
+}
+.al-inst-dropdown {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    background: white;
+    border: 1.5px solid #E8D5BC;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(62, 39, 35, 0.18);
+    min-width: 210px;
+    z-index: 400;
+    overflow: hidden;
+}
+.al-inst-opt {
+    padding: 0.65rem 1rem;
+    font-size: 0.86rem; color: #3E2723;
+    cursor: pointer; transition: background 0.15s;
+    font-weight: 500;
+}
+.al-inst-opt:hover  { background: #F5E6D3; }
+.al-inst-opt.active { background: #F5E6D3; font-weight: 700; color: #6F4E37; }
+
+.al-logout {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #F5E6D3; border-radius: 8px;
+    padding: 0.35rem 0.8rem; font-size: 0.78rem;
+    font-weight: 600; cursor: pointer; white-space: nowrap;
+    transition: background 0.2s;
+}
+.al-logout:hover { background: rgba(255, 255, 255, 0.25); }
+
+/* ===== Body ===== */
+.al-body {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    position: relative;
+}
+
+/* ===== Sidebar ===== */
+.al-nav-backdrop {
+    position: fixed; inset: 0;
+    background: rgba(62, 39, 35, 0.35);
+    z-index: 198;
+}
+
+.al-sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: 260px;
+    height: 100%;
+    background: white;
+    border-right: 2px solid #E8D5BC;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0.75rem;
+    gap: 0.25rem;
+    z-index: 199;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    padding-top: 5rem;
+    box-shadow: 4px 0 20px rgba(62, 39, 35, 0.1);
+}
+.al-sidebar.open { transform: translateX(0); }
+
+.al-sidebar-user {
+    display: flex; align-items: center; gap: 0.75rem;
+    padding: 1rem 0.85rem;
+    background: #F5E6D3; border-radius: 12px;
+    margin-bottom: 0.75rem;
+}
+.al-sidebar-avatar { font-size: 1.8rem; }
+.al-sidebar-uname {
+    font-weight: 700; color: #3E2723;
+    font-size: 0.95rem; display: block;
+}
+.al-sidebar-role {
+    font-size: 0.72rem; color: #A0826D;
+    display: block;
+}
+
+.al-sidebar-item {
+    display: flex; align-items: center; gap: 0.75rem;
+    background: none; border: none; color: #A0826D;
+    padding: 0.75rem 0.9rem; border-radius: 12px;
+    font-size: 0.92rem; font-weight: 600;
+    cursor: pointer; text-align: left; width: 100%;
+    transition: all 0.2s;
+}
+.al-sidebar-item:hover  { background: #FEF6EE; color: #6F4E37; }
+.al-sidebar-item.active { background: #F5E6D3; color: #6F4E37; }
+.al-sidebar-icon  { font-size: 1.15rem; }
+.al-sidebar-label { flex: 1; }
+
+/* ===== Main Content ===== */
+.al-main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem 1.1rem;
+    padding-bottom: 90px; /* room for mobile bottom nav */
+}
+
+/* Institution banner */
+.al-inst-banner {
+    display: flex; align-items: center; gap: 0.6rem;
+    background: #F5E6D3; border: 1.5px solid #D4A574;
+    border-radius: 12px; padding: 0.55rem 0.9rem;
+    font-size: 0.82rem; color: #6F4E37;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+.al-inst-banner strong { font-weight: 700; }
+.al-inst-banner button {
+    background: none; border: none; color: #C0392B;
+    font-size: 0.78rem; font-weight: 700;
+    cursor: pointer; padding: 0; margin-left: auto;
+}
+
+/* ===== Mobile Bottom Nav ===== */
+.al-bottom-nav {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(180deg, #F5E6D3 0%, #F5E6D3 95%, #D4A574 100%);
+    border-top: 2px solid #D4A574;
+    display: flex;
+    justify-content: space-around; align-items: center;
+    height: 72px; padding-bottom: 8px;
+    box-shadow: 0 -2px 10px rgba(62, 39, 35, 0.1);
+    z-index: 100;
+}
+.al-bottom-btn {
+    background: none; border: none; cursor: pointer;
+    padding: 0.5rem; border-radius: 12px;
+    display: flex; flex-direction: column;
+    align-items: center; gap: 0.15rem;
+    color: #A0826D; flex: 1;
+    transition: all 0.2s;
+}
+.al-bottom-btn:hover  { color: #8B6F47; background: rgba(139, 111, 71, 0.1); }
+.al-bottom-btn.active { color: #8B6F47; background: rgba(139, 111, 71, 0.15); }
+.al-bottom-icon  { font-size: 1.3rem; display: block; }
+.al-bottom-label { font-size: 0.62rem; }
+
+/* ===== Desktop ===== */
+@media (min-width: 768px) {
+    .al-hamburger { display: none; }
+    .al-sidebar {
+        position: sticky;
+        top: 0; height: calc(100vh - 53px);
+        transform: none !important;
+        padding-top: 1rem;
+        width: 210px;
+    }
+    .al-nav-backdrop { display: none; }
+    .al-bottom-nav { display: none; }
+    .al-main { padding-bottom: 1.5rem; }
+    .al-inst-name { max-width: 140px; }
+}

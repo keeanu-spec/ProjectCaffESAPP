@@ -1,0 +1,589 @@
+/* ProductDetail Styles - Coffee Theme */
+
+/* ===== Wrapper ===== */
+.detail-wrapper {
+    background-color: #FDFBF7;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 100px;
+}
+
+/* ===== Not Found ===== */
+.detail-not-found {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.nf-icon {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.detail-not-found h2 {
+    color: #3E2723;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.detail-not-found p {
+    color: #A0826D;
+    margin-bottom: 1.5rem;
+}
+
+.btn-back-menu {
+    background: linear-gradient(135deg, #8B6F47 0%, #6F4E37 100%);
+    color: #F5E6D3;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-back-menu:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 111, 71, 0.3);
+}
+
+/* ===== Header ===== */
+.detail-header {
+    background: linear-gradient(135deg, #6F4E37 0%, #5C4033 100%);
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(62, 39, 35, 0.2);
+}
+
+.detail-wrapper .back-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: #F5E6D3;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.detail-wrapper .back-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.05);
+}
+
+.detail-header-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #F5E6D3;
+    margin: 0;
+}
+
+.header-spacer {
+    width: 38px;
+}
+
+/* ===== Product Hero ===== */
+.product-hero {
+    background: linear-gradient(180deg, #5C4033 0%, #F5E6D3 100%);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-emoji {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    animation: heroFloat 3s ease-in-out infinite;
+}
+
+@keyframes heroFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.hero-info {
+    max-width: 500px;
+}
+
+.hero-name {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #3E2723;
+    margin: 0 0 0.5rem 0;
+}
+
+.hero-desc {
+    font-size: 0.9rem;
+    color: #6F4E37;
+    line-height: 1.5;
+    margin: 0 0 1rem 0;
+}
+
+.hero-allergens {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.hero-allergen-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.3rem 0.65rem;
+    border: 1.5px solid #D4A574;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6F4E37;
+}
+
+.hero-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+}
+
+.base-price {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #3E2723;
+}
+
+.price-label {
+    font-size: 0.72rem;
+    color: #A0826D;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+/* ===== Sections ===== */
+.detail-section {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 2px solid #E8D7C3;
+}
+
+.section-heading {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #3E2723;
+    margin: 0 0 0.25rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.heading-icon {
+    font-size: 1.1rem;
+}
+
+.section-hint {
+    font-size: 0.78rem;
+    color: #A0826D;
+    margin: 0 0 1rem 0;
+}
+
+/* ===== Ingredients ===== */
+.ingredients-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.ingredient-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.65rem 0.85rem;
+    background-color: white;
+    border: 2px solid #E8D7C3;
+    border-radius: 12px;
+    transition: all 0.25s ease;
+}
+
+.ingredient-item.removed {
+    background-color: #FDF2F2;
+    border-color: #F5C8C8;
+    opacity: 0.7;
+}
+
+.ingredient-item.fixed {
+    background-color: #F5E6D3;
+}
+
+.ingredient-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ingredient-name {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #3E2723;
+    transition: all 0.25s ease;
+}
+
+.ingredient-name.line-through {
+    text-decoration: line-through;
+    color: #C0392B;
+}
+
+.ingredient-tag {
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background-color: #D4A574;
+    color: #FDFBF7;
+    padding: 0.15rem 0.45rem;
+    border-radius: 6px;
+}
+
+.ingredient-toggle {
+    border: none;
+    padding: 0.35rem 0.75rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    background-color: #FDE8E8;
+    color: #C0392B;
+}
+
+.ingredient-toggle:hover {
+    transform: scale(1.05);
+}
+
+.ingredient-toggle.is-removed {
+    background-color: #E8F5E9;
+    color: #2E7D32;
+}
+
+.removed-note {
+    font-size: 0.78rem;
+    color: #C0392B;
+    font-weight: 600;
+    margin: 0.75rem 0 0 0;
+    font-style: italic;
+}
+
+/* ===== Extras ===== */
+.extras-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.extra-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.65rem 0.85rem;
+    background-color: white;
+    border: 2px solid #E8D7C3;
+    border-radius: 12px;
+    transition: all 0.25s ease;
+}
+
+.extra-item.active {
+    border-color: #8B6F47;
+    background-color: #FAF3EA;
+    box-shadow: 0 2px 8px rgba(139, 111, 71, 0.1);
+}
+
+.extra-left {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.extra-icon {
+    font-size: 1.35rem;
+    width: 36px;
+    height: 36px;
+    background-color: #F5E6D3;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.extra-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.extra-name {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #3E2723;
+}
+
+.extra-price {
+    font-size: 0.75rem;
+    color: #8B6F47;
+    font-weight: 700;
+}
+
+.extra-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.qty-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.qty-btn.plus {
+    background: linear-gradient(135deg, #8B6F47 0%, #6F4E37 100%);
+    color: #F5E6D3;
+}
+
+.qty-btn.plus:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(139, 111, 71, 0.3);
+}
+
+.qty-btn.minus {
+    background-color: #E8D7C3;
+    color: #6F4E37;
+}
+
+.qty-btn.minus:hover {
+    background-color: #D4A574;
+}
+
+.qty-value {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #3E2723;
+    min-width: 20px;
+    text-align: center;
+}
+
+.extras-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.75rem;
+    padding: 0.6rem 0.85rem;
+    background-color: #F5E6D3;
+    border-radius: 10px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #6F4E37;
+}
+
+.extras-total {
+    color: #3E2723;
+    font-weight: 800;
+}
+
+/* ===== Bottom Action Bar ===== */
+.detail-action-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #F5E6D3;
+    border-top: 2px solid #D4A574;
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 -4px 15px rgba(62, 39, 35, 0.1);
+    z-index: 200;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: white;
+    border: 2px solid #D4A574;
+    border-radius: 12px;
+    padding: 0.25rem;
+}
+
+.qty-action-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E8D7C3;
+    color: #6F4E37;
+    transition: all 0.2s ease;
+}
+
+.qty-action-btn:hover:not(:disabled) {
+    background-color: #D4A574;
+}
+
+.qty-action-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.qty-display {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #3E2723;
+    min-width: 28px;
+    text-align: center;
+}
+
+.btn-add-to-cart {
+    flex: 1;
+    background: linear-gradient(135deg, #8B6F47 0%, #6F4E37 100%);
+    color: #F5E6D3;
+    border: none;
+    padding: 0.85rem 1rem;
+    border-radius: 14px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(95, 64, 45, 0.3);
+}
+
+.btn-add-to-cart:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(95, 64, 45, 0.4);
+}
+
+.btn-add-to-cart.added {
+    background: linear-gradient(135deg, #2E7D32, #4CAF50);
+    justify-content: center;
+}
+
+.cart-total {
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .hero-emoji {
+        font-size: 4rem;
+    }
+
+    .hero-name {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .detail-wrapper {
+        padding-bottom: 90px;
+    }
+
+    .product-hero {
+        padding: 1.5rem 1rem;
+    }
+
+    .hero-emoji {
+        font-size: 3.5rem;
+    }
+
+    .hero-name {
+        font-size: 1.25rem;
+    }
+
+    .hero-desc {
+        font-size: 0.82rem;
+    }
+
+    .base-price {
+        font-size: 1.5rem;
+    }
+
+    .detail-section {
+        padding: 1rem;
+    }
+
+    .ingredient-item,
+    .extra-item {
+        padding: 0.5rem 0.65rem;
+    }
+
+    .extra-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 1.1rem;
+    }
+
+    .detail-action-bar {
+        padding: 0.6rem 1rem;
+    }
+
+    .qty-action-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    .btn-add-to-cart {
+        padding: 0.7rem 0.85rem;
+        font-size: 0.85rem;
+        border-radius: 12px;
+    }
+}
+
+@media (max-width: 320px) {
+    .hero-allergens {
+        gap: 0.25rem;
+    }
+
+    .hero-allergen-badge {
+        font-size: 0.68rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+    .extra-left {
+        gap: 0.4rem;
+    }
+}
